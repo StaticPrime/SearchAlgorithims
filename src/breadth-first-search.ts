@@ -18,11 +18,10 @@ const breadthFirstSearch = (rootNode: TreeNode, target: number): boolean => {
         const currentNode = queue.shift()
 
         if (currentNode.value === target) return true
-
+        
         if (currentNode.children.length > 0) {
             for (let child of currentNode.children) {
                 queue.push(child)
-
             }
         }
     }
