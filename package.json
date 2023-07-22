@@ -1,0 +1,19 @@
+{
+  "name": "searchalgorithms",
+  "description": "Search Algorithims",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "tsc",
+    "lint": "eslint . --ext .ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StaticPrime/SearchAlgorithims.git"
+  },
+  "author": "Jason Breault",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/StaticPrime/SearchAlgorithims/issues"
+  },
+  "homepage": "https://github.com/StaticPrime/SearchAlgorithims#readme"
+}
