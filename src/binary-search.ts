@@ -13,7 +13,7 @@ function binarySearch(arr: number[], num: number): number {
             leftPointer = middlePointer + 1
         }
     }
-    return -1
+    return arr[leftPointer] === num ? leftPointer : -1
 }
 
 const testArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
