@@ -1,31 +1,28 @@
-class TreeNode {
-    value: number
-    children: TreeNode[]
+class TreeNode<T> {
+    value: T
+    children: TreeNode<T>[]
 
-    constructor(value: number, children: TreeNode[] = []) {
+    constructor(value: T, children: TreeNode<T>[] = []) {
         this.value = value
         this.children = children
     }
 }
 
-const breadthFirstSearch = (rootNode: TreeNode, target: number): boolean => {
-    if (rootNode.value === target) return true
-
-    const queue: TreeNode[] = []
+const breadthFirstSearch = <T>(rootNode: TreeNode<T>, target: T): TreeNode<T> | null => {
+    let queue: TreeNode<T>[] = []
     queue.push(rootNode)
 
     while (queue.length > 0) {
         const currentNode = queue.shift()
+        if (currentNode.value === target) return currentNode
 
-        if (currentNode.value === target) return true
-        
         if (currentNode.children.length > 0) {
             for (let child of currentNode.children) {
                 queue.push(child)
             }
         }
     }
-    return false
+    return null
 }
 
 // Run the test
