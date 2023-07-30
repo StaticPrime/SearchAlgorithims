@@ -1,21 +1,21 @@
-class TreeNode {
-    value: number
-    children: TreeNode[]
+class TreeNode<T> {
+    value: T
+    children: TreeNode<T>[]
 
-    constructor(value: number, children: TreeNode[] = []) {
+    constructor(value: T, children: TreeNode<T>[] = []) {
         this.value = value
         this.children = children
     }
 }
 
-const depthFirstSearch = (rootNode: TreeNode, target: number): boolean => {
-    if (rootNode.value === target) return true
-    if (rootNode.children.length === 0) return false
+const depthFirstSearch = <T>(rootNode: TreeNode<T>, target: T): TreeNode<T> => {
+    if (rootNode.value === target) return rootNode
+    if (rootNode.children.length === 0) return null
 
-    for (const child of rootNode.children) {
-        if (depthFirstSearch(child, target)) return true
+    for (let child of rootNode.children) {
+        if (depthFirstSearch(child, target) !== null) return child
     }
-    return false
+    return null
 }
 
 // Run the test
