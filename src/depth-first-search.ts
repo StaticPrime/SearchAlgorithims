@@ -13,7 +13,8 @@ const depthFirstSearch = <T>(rootNode: TreeNode<T>, target: T): TreeNode<T> => {
     if (rootNode.children.length === 0) return null
 
     for (let child of rootNode.children) {
-        if (depthFirstSearch(child, target) !== null) return child
+        const searchResult = depthFirstSearch(child, target)
+        if (searchResult !== null) return searchResult
     }
     return null
 }
